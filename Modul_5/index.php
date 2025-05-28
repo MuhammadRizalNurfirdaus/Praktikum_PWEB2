@@ -42,7 +42,7 @@ if ($menu === 'tampil_buku' || ($menu === 'input_buku' && $aksi === 'edit') || $
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan</title>
-    <link rel="stylesheet" href="style.css"> <!-- Kita akan buat file style.css -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -110,7 +110,7 @@ if ($menu === 'tampil_buku' || ($menu === 'input_buku' && $aksi === 'edit') || $
             ?>
         </main>
         <footer class="main-footer">
-            <p>© <?php echo date("Y"); ?> Perpustakaan FKOM. All rights reserved.</p>
+            <p>© <?php echo date("Y"); ?> Perpustakaan. All rights reserved.</p>
         </footer>
     </div>
 </body>

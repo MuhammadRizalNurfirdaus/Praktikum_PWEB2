@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload dan Preview Foto</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        #preview_container { margin-top: 15px; text-align: center; }
+        #preview_image { max-width: 100%; max-height: 250px; border: 1px solid #ddd; display: none; margin-bottom: 10px;}
+        #file_info { font-size: 0.9em; color: #555; }
+        .error-message { color: red; font-size: 0.9em; }
+        input[type="file"] { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Foto</h2>
+        <form method="POST" enctype="multipart/form-data" action="upload_foto.php">
+            Pilih Foto: <br>
+            <input type="hidden" name="MAX_FILE_SIZE" value="5242880" /> 
+            <input name="userfile" type="file" id="userfile" accept="image/jpeg, image/png, image/gif" required />
+            <br>
+            <input type="submit" value="Upload Foto" />
+        </form>
+
+        <div id="preview_container">
+            <img id="preview_image" src="#" alt="Preview Foto" />
+            <div id="file_info"></div>
+            <div id="error_message" class="error-message"></div>
+        </div>
+
+        <p style="margin-top: 20px;"><a href="list_foto.php">Lihat Daftar Foto yang Sudah Diupload</a></p>
+    </div>
+
+    <script>
+        const userfileInput = document.getElementById('userfile');
+        const previewImage = document.getElementById('preview_image');
+        const fileInfoDiv = document.getElementById('file_info');
+        const errorMessageDiv = document.getElementById('error_message');
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+        const maxSizeMB = 5; // Batas ukuran file dalam MB
+        const maxSizeBytes = maxSizeMB * 1024 * 1024;
+
+        userfileInput.onchange = evt => {
+            previewImage.style.display = 'none';
+            previewImage.src = '#';
+            fileInfoDiv.innerHTML = '';
+            errorMessageDiv.innerHTML = '';
+
+            const [file] = userfileInput.files;
+            if (file) {
+                // Validasi tipe file
+                if (!allowedTypes.includes(file.type)) {
+                    errorMessageDiv.innerHTML = `Tipe file tidak diizinkan. Hanya JPG, PNG, dan GIF yang boleh diupload. Tipe file Anda: ${file.type}`;
+                    userfileInput.value = ''; // Kosongkan input file
+                    return;
+                }
+
+                // Validasi ukuran file
+                if (file.size > maxSizeBytes) {
+                    errorMessageDiv.innerHTML = `Ukuran file terlalu besar (Maks: ${maxSizeMB}MB). Ukuran file Anda: ${(file.size / 1024 / 1024).toFixed(2)}MB`;
+                    userfileInput.value = ''; // Kosongkan input file
+                    return;
+                }
+
+                previewImage.src = URL.createObjectURL(file);
+                previewImage.style.display = 'block';
+                fileInfoDiv.innerHTML = `
+                    <b>Nama File:</b> ${file.name}<br>
+                    <b>Ukuran:</b> ${(file.size / 1024).toFixed(2)} KB<br>
+                    <b>Tipe:</b> ${file.type}
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
