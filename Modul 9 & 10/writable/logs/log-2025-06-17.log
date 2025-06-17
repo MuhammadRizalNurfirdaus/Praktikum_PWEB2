@@ -1,0 +1,795 @@
+CRITICAL - 2025-06-17 04:21:51 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:07 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:08 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:08 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:08 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:08 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:08 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:08 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:09 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:09 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:09 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 20.
+ 1 APPPATH\Views\v_buku.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 20)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:39 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:40 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:40 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:40 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:40 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:40 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:41 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:41 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:41 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:41 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:41 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:41 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:23:42 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 22.
+ 1 APPPATH\Views\v_buku.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 22)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:24:14 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:24:15 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:24:15 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:24:15 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:24:15 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:24:16 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:24:16 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:24:16 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:24:16 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:27:19 --> ErrorException: Undefined array key "kd_buku"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 38.
+ 1 APPPATH\Views\v_buku.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_buku"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:27:23 --> ErrorException: Undefined array key "kd_buku"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 38.
+ 1 APPPATH\Views\v_buku.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_buku"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:27:24 --> ErrorException: Undefined array key "kd_buku"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 38.
+ 1 APPPATH\Views\v_buku.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_buku"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:27:25 --> ErrorException: Undefined array key "kd_buku"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 38.
+ 1 APPPATH\Views\v_buku.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_buku"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:27:25 --> ErrorException: Undefined array key "kd_buku"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 38.
+ 1 APPPATH\Views\v_buku.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_buku"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:43 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:44 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:44 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:45 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:45 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:45 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:45 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:45 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:45 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:46 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:46 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:46 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:46 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:46 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
+CRITICAL - 2025-06-17 04:32:47 --> ErrorException: Undefined array key "KD_BUKU"
+[Method: GET, Route: c_buku]
+in APPPATH\Views\v_buku.php on line 24.
+ 1 APPPATH\Views\v_buku.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "KD_BUKU"', 'C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\app\\Views\\v_buku.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('v_buku', [], true)
+ 5 APPPATH\Controllers\c_buku.php(49): view('v_buku', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\c_buku->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\c_buku))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Pemrograman_Web_2\\Praktikum_PWEB2\\Modul 9 & 10\\public\\index.php')
