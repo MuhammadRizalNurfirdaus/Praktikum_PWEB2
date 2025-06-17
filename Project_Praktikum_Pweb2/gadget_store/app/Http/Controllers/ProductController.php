@@ -3,208 +3,141 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\Category;
-use App\Models\Brand;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str; // Untuk membuat slug
-use Illuminate\Support\Facades\Storage; // Untuk menghapus gambar
+use App\Models\Category;
+// use Illuminate\Support\Facades\Storage; // Tidak kita gunakan jika langsung ke public
 
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource for public view.
+     * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $productsQuery = Product::where('is_active', true)
-            ->with('brand', 'category', 'images');
-
-        if ($request->filled('category')) {
-            $category = Category::where('slug', $request->category)->first();
-            if ($category) {
-                $productsQuery->where('category_id', $category->id);
-            }
-        }
-
-        if ($request->filled('brand')) {
-            $brand = Brand::where('slug', $request->brand)->first();
-            if ($brand) {
-                $productsQuery->where('brand_id', $brand->id);
-            }
-        }
-
-        if ($request->filled('sort')) {
-            if ($request->sort == 'price_asc') {
-                $productsQuery->orderBy('price', 'asc');
-            } elseif ($request->sort == 'price_desc') {
-                $productsQuery->orderBy('price', 'desc');
-            } elseif ($request->sort == 'latest') {
-                $productsQuery->latest();
-            }
-        } else {
-            $productsQuery->latest(); // Default sorting
-        }
-
-        $products = $productsQuery->paginate(12);
-        $categories = Category::whereNull('parent_id')->orderBy('name')->get();
-        $brands = Brand::orderBy('name')->get();
-
-        return view('products.index', compact('products', 'categories', 'brands'));
+        $products = Product::latest()->paginate(10);
+        return view('products.index', compact('products'));
     }
-
-    /**
-     * Display the specified resource for public view.
-     */
-    public function show(Product $product)
-    {
-        // Admin boleh lihat produk non-aktif jika sudah login dan adalah admin
-        if (!$product->is_active && !(auth()->check() && auth()->user()->role === 'admin')) {
-            abort(404);
-        }
-
-        $product->load(['brand', 'category', 'images', 'specifications', 'reviews.user']);
-        $relatedProducts = Product::where('category_id', $product->category_id)
-            ->where('id', '!=', $product->id)
-            ->where('is_active', true)
-            ->with('images')
-            ->take(4)
-            ->get();
-        return view('products.show', compact('product', 'relatedProducts'));
-    }
-
-    // --- CRUD METHODS (SANGAT DIREKOMENDASIKAN DIPINDAH KE ADMIN CONTROLLER TERPISAH) ---
 
     /**
      * Show the form for creating a new resource.
-     * (Admin)
      */
     public function create()
     {
-        // Asumsi view ini ada di: resources/views/admin/products/create.blade.php
-        // Dan rute ini dilindungi oleh middleware admin
-        $categories = Category::orderBy('name')->get();
-        $brands = Brand::orderBy('name')->get();
-        return view('admin.products.create', compact('categories', 'brands'));
+        $categories = Category::orderBy('name')->get(); // Ambil semua kategori
+        return view('products.create', compact('categories')); // Kirim $categories ke view
+
+    }
+
+    public function store(Request $request) // Pastikan category_id divalidasi dan disimpan
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'price' => 'required|string', // Validasi sebagai string dulu
+            'stock' => 'required|integer|min:0',
+            'category_id' => 'nullable|exists:categories,id',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // Bersihkan format harga
+        $price = (float) str_replace('.', '', $validated['price']); // Hapus titik, ubah ke float/int
+        if (!is_numeric($price) || $price < 0) {
+            // Tambahkan error manual jika setelah dibersihkan ternyata bukan angka valid
+            return back()->withErrors(['price' => 'Format harga tidak valid.'])->withInput();
+        }
+
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            // ... (logika upload gambar)
+            $imageName = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images/products'), $imageName);
+            $imagePath = 'images/products/' . $imageName;
+        }
+
+        Product::create([
+            'name' => $validated['name'],
+            'description' => $validated['description'],
+            'price' => $price, // Gunakan harga yang sudah dibersihkan
+            'stock' => $validated['stock'],
+            'category_id' => $validated['category_id'],
+            'image_path' => $imagePath,
+        ]);
+
+        return redirect()->route('products.index')->with('success', 'Produk berhasil ditambahkan.');
     }
 
     /**
-     * Store a newly created resource in storage.
-     * (Admin)
+     * Display the specified resource.
      */
-    public function store(Request $request)
+    public function show(Product $product)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255|unique:products,name',
-            'category_id' => 'required|exists:categories,id',
-            'brand_id' => 'required|exists:brands,id',
-            'short_description' => 'nullable|string|max:500', // Batasi panjang jika perlu
-            'long_description' => 'nullable|string',
-            'price' => 'required|numeric|min:0',
-            'sale_price' => 'nullable|numeric|min:0|lt:price',
-            'stock_quantity' => 'required|integer|min:0',
-            'sku' => 'nullable|string|max:100|unique:products,sku',
-            'is_featured' => 'sometimes|boolean',
-            'is_active' => 'sometimes|boolean',
-            'condition' => 'required|in:baru,bekas,refurbished',
-            // 'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
-        ]);
-
-        $validatedData['slug'] = Str::slug($validatedData['name']);
-        $originalSlug = $validatedData['slug'];
-        $count = 1;
-        while (Product::where('slug', $validatedData['slug'])->exists()) {
-            $validatedData['slug'] = $originalSlug . '-' . $count++;
-        }
-
-        $validatedData['is_featured'] = $request->boolean('is_featured'); // Gunakan $request->boolean()
-        $validatedData['is_active'] = $request->boolean('is_active');     // Gunakan $request->boolean()
-
-        $product = Product::create($validatedData);
-
-        // --- Logika Upload Gambar Utama (Contoh Sederhana) ---
-        // if ($request->hasFile('main_image') && $request->file('main_image')->isValid()) {
-        //     $path = $request->file('main_image')->store('products', 'public');
-        //     $product->images()->create([
-        //         'image_path' => $path,
-        //         'is_primary' => true,
-        //     ]);
-        // }
-        // --- Akhir Logika Upload Gambar ---
-
-        return redirect()->route('admin.products.index')->with('success', 'Produk berhasil ditambahkan!');
+        return view('products.show', compact('product'));
     }
-
 
     /**
      * Show the form for editing the specified resource.
-     * (Admin)
      */
-    public function edit(Product $product) // Route Model Binding
+    public function edit(Product $product)
     {
-        // Asumsi view ini ada di: resources/views/admin/products/edit.blade.php
-        $categories = Category::orderBy('name')->get();
-        $brands = Brand::orderBy('name')->get();
-        return view('admin.products.edit', compact('product', 'categories', 'brands'));
+        $categories = Category::orderBy('name')->get(); // Ambil semua kategori
+        return view('products.edit', compact('product', 'categories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     * (Admin)
-     */
-    public function update(Request $request, Product $product) // Route Model Binding
+    public function update(Request $request, Product $product) // Pastikan category_id divalidasi dan disimpan
     {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255|unique:products,name,' . $product->id,
-            'category_id' => 'required|exists:categories,id',
-            'brand_id' => 'required|exists:brands,id',
-            'short_description' => 'nullable|string|max:500',
-            'long_description' => 'nullable|string',
-            'price' => 'required|numeric|min:0',
-            'sale_price' => 'nullable|numeric|min:0|lt:price',
-            'stock_quantity' => 'required|integer|min:0',
-            'sku' => 'nullable|string|max:100|unique:products,sku,' . $product->id,
-            'is_featured' => 'sometimes|boolean',
-            'is_active' => 'sometimes|boolean',
-            'condition' => 'required|in:baru,bekas,refurbished',
-            // 'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'price' => 'required|string', // Validasi sebagai string dulu
+            'stock' => 'required|integer|min:0',
+            'category_id' => 'nullable|exists:categories,id',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        if ($request->name !== $product->name) {
-            $validatedData['slug'] = Str::slug($validatedData['name']);
-            $originalSlug = $validatedData['slug'];
-            $count = 1;
-            while (Product::where('slug', $validatedData['slug'])->where('id', '!=', $product->id)->exists()) {
-                $validatedData['slug'] = $originalSlug . '-' . $count++;
+        // Bersihkan format harga
+        $price = (float) str_replace('.', '', $validated['price']); // Hapus titik, ubah ke float/int
+        if (!is_numeric($price) || $price < 0) {
+            // Tambahkan error manual jika setelah dibersihkan ternyata bukan angka valid
+            return back()->withErrors(['price' => 'Format harga tidak valid.'])->withInput();
+        }
+        $imagePath = $product->image_path;
+        if ($request->hasFile('image')) {
+            if ($product->image_path) {
+                $oldImagePath = public_path($product->image_path);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
             }
+            $imageName = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images/products'), $imageName);
+            $imagePath = 'images/products/' . $imageName;
         }
 
-        $validatedData['is_featured'] = $request->boolean('is_featured');
-        $validatedData['is_active'] = $request->boolean('is_active');
-
-        $product->update($validatedData);
-
-        // --- Logika Update/Upload Gambar Utama (Contoh Sederhana) ---
-        // Implementasi mirip dengan di method store(), mungkin perlu menghapus gambar lama dulu.
-        // --- Akhir Logika Update Gambar ---
-
-        return redirect()->route('admin.products.index')->with('success', 'Produk berhasil diperbarui!');
+        Product::create([
+            'name' => $validated['name'],
+            'description' => $validated['description'],
+            'price' => $price, // Gunakan harga yang sudah dibersihkan
+            'stock' => $validated['stock'],
+            'category_id' => $validated['category_id'],
+            'image_path' => $imagePath,
+        ]);
+        return redirect()->route('products.index')->with('success', 'Produk berhasil diperbarui.');
     }
 
     /**
      * Remove the specified resource from storage.
-     * (Admin)
      */
-    public function destroy(Product $product) // Route Model Binding
+    public function destroy(Product $product)
     {
-        // --- Logika Hapus Gambar Terkait (Contoh Sederhana) ---
-        // foreach ($product->images as $image) {
-        //     Storage::disk('public')->delete($image->image_path);
-        //     $image->delete();
-        // }
-        // --- Akhir Logika Hapus Gambar ---
+        if ($product->image_path) {
+            $imagePathToDelete = public_path($product->image_path);
+            if (file_exists($imagePathToDelete)) {
+                unlink($imagePathToDelete);
+            }
+        }
 
-        $product->delete(); // Akan melakukan soft delete jika model Product menggunakan trait SoftDeletes
+        $product->delete();
 
-        return redirect()->route('admin.products.index')->with('success', 'Produk berhasil dihapus!');
+        return redirect()->route('products.index')->with('success', 'Produk berhasil dihapus.');
     }
 }

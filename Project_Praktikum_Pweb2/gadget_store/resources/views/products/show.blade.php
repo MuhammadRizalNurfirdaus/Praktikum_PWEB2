@@ -1,127 +1,79 @@
-@extends('layouts.store')
+{{-- AWAL DARI FILE resources/views/products/show.blade.php (VERSI KUSTOM LENGKAP) --}}
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            Detail Produk: <span class="text-indigo-600 dark:text-indigo-400">{{ $product->name }}</span>
+        </h2>
+    </x-slot>
 
-@section('title', $product->name)
-
-@section('content')
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <div class="md:flex">
-            <!-- Galeri Gambar Produk -->
-            <div class="md:w-1/2 p-4">
-                @if($product->images->isNotEmpty())
-                    <img src="{{ asset('storage/' . $product->images->first()->image_path) }}" alt="{{ $product->name }}" class="w-full h-auto object-contain rounded-lg shadow mb-4" style="max-height: 500px;">
-                    {{-- Tambahkan thumbnail untuk galeri jika ada banyak gambar --}}
-                    @if($product->images->count() > 1)
-                        <div class="grid grid-cols-4 gap-2">
-                            @foreach($product->images as $image)
-                                <img src="{{ asset('storage/' . $image->image_path) }}" alt="{{ $product->name }}" class="w-full h-20 object-cover rounded cursor-pointer border hover:border-indigo-500">
-                                {{-- Tambahkan JS untuk mengganti gambar utama saat thumbnail diklik --}}
-                            @endforeach
+    <div class="py-12">
+        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8"> {{-- max-w-4xl agar tidak terlalu lebar --}}
+            <div
+                class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg border border-gray-200 dark:border-gray-700">
+                <div class="p-6 md:p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6">
+                        {{-- Kolom Gambar --}}
+                        <div class="md:col-span-1">
+                            @if ($product->image_path)
+                                <img src="{{ asset($product->image_path) }}" alt="{{ $product->name }}"
+                                    class="w-full h-auto max-h-[400px] object-contain rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+                            @else
+                                <div
+                                    class="w-full h-64 bg-gray-100 dark:bg-gray-700 flex items-center justify-center rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+                                    <span class="text-gray-500 dark:text-gray-400">Gambar tidak tersedia</span>
+                                </div>
+                            @endif
                         </div>
-                    @endif
-                @else
-                    <img src="{{ asset('images/products_dummy/sample-image-1.jpg') }}" alt="{{ $product->name }}" class="w-full h-auto object-contain rounded-lg shadow">
-                @endif
-            </div>
 
-            <!-- Detail Produk -->
-            <div class="md:w-1/2 p-6">
-                <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ $product->name }}</h1>
-                <p class="text-sm text-gray-500 mb-1">
-                    Brand: <span class="font-semibold">{{ $product->brand->name ?? 'N/A' }}</span> |
-                    Kategori: <span class="font-semibold">{{ $product->category->name ?? 'N/A' }}</span>
-                </p>
-                 @if ($product->sku)
-                    <p class="text-sm text-gray-500 mb-4">SKU: {{ $product->sku }}</p>
-                @endif
+                        {{-- Kolom Detail Teks --}}
+                        <div class="md:col-span-2">
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">{{ $product->name }}</h3>
+                            <p class="text-2xl text-indigo-600 dark:text-indigo-400 font-semibold mb-6">
+                                Rp {{ number_format($product->price, 0, ',', '.') }}
+                            </p>
 
-                <p class="text-3xl font-extrabold text-indigo-700 mb-4">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                            @if ($product->category)
+                                <div class="mb-4">
+                                    <span class="font-semibold text-gray-700 dark:text-gray-300">Kategori:</span>
+                                    <a href="{{ route('categories.show', $product->category->slug) }}"
+                                        class="ml-1 text-indigo-600 dark:text-indigo-400 hover:underline">
+                                        {{ $product->category->name }}
+                                    </a>
+                                </div>
+                            @endif
 
-                @if($product->sale_price && $product->sale_price < $product->price)
-                    <p class="text-lg text-gray-500 line-through mb-1">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
-                    <p class="text-2xl font-bold text-red-600 mb-4">Rp {{ number_format($product->sale_price, 0, ',', '.') }}</p>
-                @endif
+                            <div class="mb-4">
+                                <span class="font-semibold text-gray-700 dark:text-gray-300">Stok:</span>
+                                <span class="ml-1 text-gray-600 dark:text-gray-400">{{ $product->stock }}
+                                    {{ $product->stock > 0 ? '' : '(Habis)' }}</span>
+                            </div>
 
-                <div class="mb-4">
-                    <p class="text-gray-700 text-sm mb-1">Stok:
-                        @if($product->stock_quantity > 0)
-                            <span class="text-green-600 font-semibold">{{ $product->stock_quantity }} tersedia</span>
-                        @else
-                            <span class="text-red-600 font-semibold">Stok Habis</span>
-                        @endif
-                    </p>
-                    <p class="text-gray-700 text-sm">Kondisi: <span class="capitalize">{{ $product->condition }}</span></p>
-                    @if($product->warranty_info)
-                         <p class="text-gray-700 text-sm">Garansi: {{ $product->warranty_info }}</p>
-                    @endif
-                </div>
+                            @if ($product->description)
+                                <div class="mb-6">
+                                    <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-1">Deskripsi:</h4>
+                                    <div
+                                        class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed">
+                                        {!! nl2br(e($product->description)) !!}
+                                    </div>
+                                </div>
+                            @endif
 
-                <div class="prose max-w-none text-gray-700 mb-6">
-                    <h3 class="text-xl font-semibold mb-2">Deskripsi Singkat</h3>
-                    {!! nl2br(e($product->short_description)) !!}
-                </div>
-
-                {{-- Tombol Add to Cart & Aksi lainnya --}}
-                <div class="mt-6">
-                    {{-- Form untuk Add to Cart akan ditambahkan di sini --}}
-                    <button type="button" class="w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50" {{ $product->stock_quantity <= 0 ? 'disabled' : '' }}>
-                        {{ $product->stock_quantity > 0 ? 'Tambah ke Keranjang' : 'Stok Habis' }}
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Deskripsi Panjang & Spesifikasi -->
-        <div class="mt-8 p-6 border-t border-gray-200">
-            <div class="prose max-w-none mb-8">
-                <h3 class="text-2xl font-semibold mb-3">Deskripsi Lengkap</h3>
-                {!! nl2br(e($product->long_description)) !!}
-            </div>
-
-            @if($product->specifications->isNotEmpty())
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold mb-3">Spesifikasi</h3>
-                    <ul class="list-disc list-inside space-y-1 text-gray-700">
-                        @foreach($product->specifications as $spec)
-                            <li><strong>{{ $spec->name }}:</strong> {{ $spec->value }} {{ $spec->unit }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-        </div>
-
-        <!-- Review Produk (akan ditambahkan nanti) -->
-        {{-- <div class="mt-8 p-6 border-t border-gray-200">
-            <h3 class="text-2xl font-semibold mb-3">Ulasan Produk</h3>
-            @forelse($product->reviews as $review)
-                <div class="border-b py-2">
-                    <strong>{{ $review->user->name }}</strong> ({{ $review->rating }}/5)
-                    <p>{{ $review->comment }}</p>
-                </div>
-            @empty
-                <p>Belum ada ulasan untuk produk ini.</p>
-            @endforelse
-        </div> --}}
-
-        <!-- Produk Terkait -->
-        @if($relatedProducts->isNotEmpty())
-            <div class="mt-12 p-6 border-t border-gray-200">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Produk Terkait</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    @foreach ($relatedProducts as $related)
-                        <div class="bg-gray-50 shadow rounded-lg overflow-hidden">
-                            <a href="{{ route('products.show', $related->slug) }}">
-                                <img src="{{ $related->images->first() ? asset('storage/' . $related->images->first()->image_path) : asset('images/products_dummy/sample-image-1.jpg') }}" alt="{{ $related->name }}" class="w-full h-48 object-cover">
-                            </a>
-                            <div class="p-3">
-                                <h4 class="text-md font-semibold text-gray-900 mb-1 truncate">
-                                    <a href="{{ route('products.show', $related->slug) }}" class="hover:text-indigo-600">{{ $related->name }}</a>
-                                </h4>
-                                <p class="text-lg font-bold text-indigo-600">Rp {{ number_format($related->price, 0, ',', '.') }}</p>
+                            <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 flex flex-wrap gap-3">
+                                <a href="{{ route('products.index') }}"
+                                    class="inline-flex items-center px-4 py-2 bg-gray-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-600 active:bg-gray-700 focus:outline-none focus:border-gray-700 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
+                                    « Kembali ke Daftar
+                                </a>
+                                <a href="{{ route('products.edit', $product->id) }}"
+                                    class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 active:bg-indigo-800 focus:outline-none focus:border-indigo-800 focus:ring ring-indigo-300 disabled:opacity-25 transition ease-in-out duration-150">
+                                    Edit Produk
+                                </a>
+                                {{-- Tombol Tambah ke Keranjang bisa ditambahkan di sini nanti --}}
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
             </div>
-        @endif
+        </div>
     </div>
-@endsection
+</x-app-layout>
+{{-- AKHIR DARI FILE resources/views/products/show.blade.php (VERSI KUSTOM LENGKAP) --}}
