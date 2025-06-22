@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Models;
+namespace App\Models; // Pastikan namespace ini benar
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsTo; // <--- PASTIKAN INI DIIMPORT
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use App\Models\OrderItem;
-use Illuminate\Support\Str;
+use Illuminate\Support\Str; // Untuk generate order number
 
 class Order extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
+        'user_id',          // User yang membuat pesanan (pelanggan)
+        'kurir_id',         // <--- TAMBAHKAN INI KE $fillable jika akan diisi via mass assignment
         'order_number',
         'total_amount',
         'status',
@@ -28,11 +28,25 @@ class Order extends Model
     ];
 
     /**
-     * Relasi ke User: Satu pesanan dimiliki oleh satu user.
+     * Relasi ke User (pelanggan yang membuat pesanan).
+     * Satu pesanan dimiliki oleh satu user.
      */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id'); // 'user_id' adalah foreign key di tabel orders
+    }
+
+    /**
+     * Relasi ke User (kurir yang ditugaskan untuk pesanan ini).
+     * Satu pesanan bisa ditugaskan ke satu kurir.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function kurir(): BelongsTo // <--- TAMBAHKAN METHOD RELASI INI
+    {
+        // 'kurir_id' adalah nama foreign key di tabel 'orders' yang merujuk ke 'id' di tabel 'users'
+        // Jika nama foreign key Anda berbeda, sesuaikan di sini.
+        return $this->belongsTo(User::class, 'kurir_id');
     }
 
     /**
@@ -43,14 +57,29 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
-    // Anda bisa tambahkan method lain di sini, misal untuk generate order number
+    /**
+     * Boot method untuk model.
+     * Digunakan untuk otomatis generate order_number saat membuat pesanan baru.
+     */
     protected static function boot()
     {
         parent::boot();
+
         static::creating(function ($order) {
             if (empty($order->order_number)) {
                 // Generate nomor pesanan unik, contoh: INV-YYYYMMDD-XXXXX
-                $order->order_number = 'INV-' . date('Ymd') . '-' . strtoupper(Str::random(5));
+                // Pastikan tidak ada duplikasi jika ada potensi race condition (jarang terjadi untuk ini)
+                $prefix = 'INV-';
+                $datePart = date('Ymd');
+                $uniquePart = strtoupper(Str::random(5));
+                $orderNumber = $prefix . $datePart . '-' . $uniquePart;
+
+                // Cek sederhana untuk keunikan, bisa dibuat lebih robust jika perlu
+                while (static::where('order_number', $orderNumber)->exists()) {
+                    $uniquePart = strtoupper(Str::random(5));
+                    $orderNumber = $prefix . $datePart . '-' . $uniquePart;
+                }
+                $order->order_number = $orderNumber;
             }
         });
     }

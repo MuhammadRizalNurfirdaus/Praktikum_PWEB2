@@ -37,10 +37,12 @@
                                 <select name="size" id="size"
                                     class="form-select @error('size') is-invalid @enderror" required>
                                     <option value="">Pilih Ukuran</option>
-                                    <option value="Sedang" {{ old('size', $product->size) == 'Sedang' ? 'selected' : '' }}>
-                                        Sedang</option>
-                                    <option value="Besar" {{ old('size', $product->size) == 'Besar' ? 'selected' : '' }}>
-                                        Besar</option>
+                                    <option value="Small" {{ old('size', $product->size) == 'Small' ? 'selected' : '' }}>
+                                        Small</option>
+                                    <option value="Medium" {{ old('size', $product->size) == 'Medium' ? 'selected' : '' }}>
+                                        Meduim</option>
+                                    <option value="Large" {{ old('size', $product->size) == 'Large' ? 'selected' : '' }}>
+                                        Large</option>
                                 </select>
                                 @error('size')
                                     <div class="invalid-feedback">{{ $message }}</div>

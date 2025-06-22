@@ -28,6 +28,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
             // Tambahkan alias 'admin' Anda:
             'admin' => \App\Http\Middleware\AdminMiddleware::class, // Pastikan file ini ada: app/Http/Middleware/AdminMiddleware.php
+            'kurir' => \App\Http\Middleware\KurirMiddleware::class, // Pastikan file ini ada: app/Http/Middleware/KurirMiddleware.php
 
             // Jika nanti ada KurirMiddleware:
             // 'kurir' => \App\Http\Middleware\KurirMiddleware::class,
