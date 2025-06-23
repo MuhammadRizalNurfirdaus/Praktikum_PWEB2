@@ -62,7 +62,6 @@
         }
 
         .navbar-custom-main .navbar-brand-static:hover,
-        /* Efek hover jika brand non-link */
         .navbar-custom-main .nav-link:hover,
         .navbar-custom-main .nav-link.active {
             color: #1A202C;
@@ -121,10 +120,8 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavContent">
-                {{-- Semua link navigasi utama sekarang di kanan (ms-auto) --}}
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                     <li class="nav-item">
-                        {{-- LINK BERANDA SUDAH BENAR MENGARAH KE route('home') --}}
                         <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}"
                             href="{{ route('home') }}">Beranda</a>
                     </li>
@@ -136,7 +133,6 @@
                         <a class="nav-link {{ request()->routeIs('contact.page') ? 'active' : '' }}"
                             href="{{ route('contact.page') }}">Kontak</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link position-relative {{ request()->routeIs('cart.index') ? 'active' : '' }}"
                             href="{{ route('cart.index') }}">
@@ -157,22 +153,20 @@
                             @endif
                         </a>
                     </li>
-
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item"><a class="nav-link {{ request()->routeIs('login') ? 'active' : '' }}"
-                                    href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                                    href="{{ route('login') }}">{{ _('Login') }}</a></li>
                         @endif
                         @if (Route::has('register'))
                             <li class="nav-item"><a class="nav-link {{ request()->routeIs('register') ? 'active' : '' }}"
-                                    href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                                    href="{{ route('register') }}">{{ _('Register') }}</a></li>
                         @endif
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdownUserMenu" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="bi bi-person-circle me-1 fs-5"></i>
-                                {{ Str::words(Auth::user()->name, 1, '') }}
+                                <i class="bi bi-person-circle me-1 fs-5"></i> {{ Str::words(Auth::user()->name, 1, '') }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-end shadow-lg border-0"
                                 aria-labelledby="navbarDropdownUserMenu">
@@ -183,25 +177,19 @@
                                     <a class="dropdown-item" href="{{ route('kurir.dashboard') }}"><i
                                             class="bi bi-truck"></i> Panel Kurir</a>
                                 @else
-                                    {{-- User biasa --}}
                                     <a class="dropdown-item" href="{{ route('user.dashboard') }}"><i
                                             class="bi bi-speedometer2"></i> Dashboard Saya</a>
                                 @endif
-
                                 <a class="dropdown-item" href="{{ route('profile.edit') }}"><i
                                         class="bi bi-person-badge-fill"></i> Profil Saya</a>
-
                                 @if (Auth::user()->isUser())
-                                    {{-- Hanya user biasa yang punya riwayat pesanan dari dropdown ini --}}
                                     <a class="dropdown-item" href="{{ route('user.orders.index') }}"><i
                                             class="bi bi-list-check"></i> Riwayat Pesanan</a>
                                 @endif
-
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-danger" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form-public').submit();">
-                                    <i class="bi bi-box-arrow-right"></i> Log Out
-                                </a>
+                                    onclick="event.preventDefault(); document.getElementById('logout-form-public').submit();"><i
+                                        class="bi bi-box-arrow-right"></i> Log Out</a>
                                 <form id="logout-form-public" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf</form>
                             </div>
@@ -212,28 +200,48 @@
         </div><!-- /.container -->
     </nav>
 
+    {{-- AWAL BAGIAN FLASH MESSAGES --}}
     <div class="container main-container">
-        {{-- Flash Messages --}}
         @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert"> {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>
-        @endif
-        @if (session('error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert"> {{ session('error') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>
-        @endif
-        @if ($errors->any())
-            <div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Whoops! Ada beberapa
-                    masalah:</strong>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {!! session('success') !!} {{-- Menggunakan {!! !!} agar HTML di pesan bisa dirender (misal <strong>) --}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
 
-        @yield('content')
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {!! session('error') !!}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        {{-- Pesan khusus untuk QR (jika ada dan berbeda dari 'success' biasa) --}}
+        {{-- Jika Anda menggabungkan pesan QR ke dalam 'success', bagian ini mungkin tidak perlu --}}
+        @if (session('success_with_qr'))
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                {!! session('success_with_qr') !!}
+                {{-- Bagian untuk menampilkan QR dan detail pesanan bisa tetap di checkout.index.blade.php
+                     atau dipindahkan ke sini jika ingin ditampilkan di semua halaman setelah redirect QR.
+                     Untuk sekarang, kita biarkan logika QR ada di checkout.index.blade.php --}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Whoops! Ada beberapa masalah dengan input Anda:</strong>
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        {{-- AKHIR BAGIAN FLASH MESSAGES --}}
+
+        @yield('content') {{-- Konten spesifik halaman akan dirender di sini --}}
     </div>
 
     <footer class="footer mt-auto">

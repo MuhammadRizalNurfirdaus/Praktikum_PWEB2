@@ -1,14 +1,15 @@
 <?php
 
 // Controllers Publik
-use App\Http\Controllers\HomeController; // Untuk halaman Beranda baru
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
 
 // Controllers untuk User yang Login (Umum)
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProfileController; // Dari Breeze
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderSuccessController; // Untuk halaman sukses pesanan
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\User\OrderController as UserOrderController;
 
@@ -18,6 +19,7 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\ContactMessageController as AdminContactMessageController;
+use App\Http\Controllers\Admin\ActivityLogController;
 
 // Controllers Kurir
 use App\Http\Controllers\Kurir\DashboardController as KurirDashboardController;
@@ -32,11 +34,10 @@ use Illuminate\Support\Facades\Auth; // Untuk digunakan di route redirect dashbo
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home'); // <--- PERBAIKAN: Mengarah ke HomeController
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/produk', [ProductController::class, 'index'])->name('products.index.public_list');
 Route::get('/produk/{product}', [ProductController::class, 'show'])->name('products.show.public_detail');
 
-// Halaman Kontak sekarang menjadi publik
 Route::get('/kontak', [ContactController::class, 'create'])->name('contact.page');
 Route::post('/kontak', [ContactController::class, 'store'])->name('contact.store');
 
@@ -52,23 +53,26 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Redirect default untuk /dashboard (misalnya setelah registrasi/login dari Breeze)
+    // Route ini akan menangkap jika Breeze atau sistem lain mencoba mengarahkan ke '/dashboard'
     Route::get('/dashboard', function () {
         $user = Auth::user();
         if ($user->isAdmin()) {
             return redirect()->route('admin.dashboard');
         } elseif ($user->isKurir()) {
             return redirect()->route('kurir.dashboard');
-        } elseif ($user->isUser()) {
+        } elseif ($user->isUser()) { // Pastikan method isUser() ada di model User
             return redirect()->route('user.dashboard');
         }
-        return redirect()->route('home'); // Fallback ke halaman utama publik
-    })->name('dashboard');
+        // Fallback jika tidak ada peran yang cocok atau user biasa tanpa dashboard spesifik
+        return redirect()->route('home');
+    })->name('dashboard'); // Memberi nama 'dashboard' pada redirector ini
 
     // User Dashboard & Order Routes
     Route::get('/dashboard-saya', [UserDashboardController::class, 'index'])->name('user.dashboard');
     Route::get('/pesanan-saya', [UserOrderController::class, 'index'])->name('user.orders.index');
     Route::get('/pesanan-saya/{order}', [UserOrderController::class, 'show'])->name('user.orders.show');
     Route::post('/pesanan-saya/{order}/konfirmasi-terima', [UserOrderController::class, 'confirmReception'])->name('user.orders.confirmReception');
+    Route::get('/pesanan-sukses/{order}', [OrderSuccessController::class, 'show'])->name('order.success'); // Halaman sukses pesanan
 
     // Routes untuk Keranjang Belanja
     Route::get('/keranjang', [CartController::class, 'index'])->name('cart.index');
@@ -92,10 +96,13 @@ Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->name('admin.'
     Route::resource('products', AdminProductController::class);
     Route::resource('users', AdminUserController::class)->except(['create', 'store', 'show']);
     Route::resource('orders', AdminOrderController::class)->only(['index', 'show', 'update', 'destroy']);
-    // Route untuk contact messages disederhanakan
+    Route::patch('/orders/{order}/confirm-qr-payment', [AdminOrderController::class, 'confirmQrPayment'])->name('orders.confirmQrPayment');
     Route::resource('contacts', AdminContactMessageController::class)
-        ->parameters(['contacts' => 'contactMessage']) // Menyesuaikan nama parameter jika modelnya ContactMessage
-        ->only(['index', 'show', 'update', 'destroy']); // Nama route akan menjadi admin.contacts.index, dll.
+        ->parameters(['contacts' => 'contactMessage'])
+        ->only(['index', 'show', 'update', 'destroy']);
+
+    // --- ROUTE UNTUK SEMUA AKTIVITAS ---
+    Route::get('/activities', [ActivityLogController::class, 'index'])->name('activities.index');
 });
 
 /*
@@ -104,11 +111,11 @@ Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->name('admin.'
 |--------------------------------------------------------------------------
 */
 Route::middleware(['auth', 'verified', 'kurir'])->prefix('kurir')->name('kurir.')->group(function () {
-    Route::get('/dashboard', [KurirDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [KurirDashboardController::class, 'index'])->name('dashboard'); // kurir.dashboard
     Route::get('/orders', [KurirOrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{order}', [KurirOrderController::class, 'show'])->name('orders.show');
     Route::put('/orders/{order}/update-status', [KurirOrderController::class, 'updateStatus'])->name('orders.updateStatus');
 });
 
-// Auth routes dari Laravel Breeze
+// Auth routes dari Laravel Breeze (penting untuk login, register, reset password, dll.)
 require __DIR__ . '/auth.php';

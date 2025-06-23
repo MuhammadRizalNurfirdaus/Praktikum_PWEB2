@@ -19,20 +19,16 @@
                                 <h5 class="card-title mb-1">TOTAL PRODUK</h5>
                                 <h3 class="mb-0 fw-bold">{{ $totalProducts ?? 0 }}</h3>
                             </div>
-                            <div class="card-icon text-white-50">
-                                <i class="bi bi-cup-straw" style="font-size: 2.5rem;"></i>
+                            <div class="card-icon text-white-50"><i class="bi bi-cup-straw" style="font-size: 2.5rem;"></i>
                             </div>
                         </div>
                     </div>
                     <a href="{{ route('admin.products.index') }}"
-                        class="card-footer text-white bg-primary bg-opacity-75 text-decoration-none d-flex justify-content-between align-items-center mt-auto">
-                        <span>Lihat Detail</span>
-                        <i class="bi bi-arrow-right-circle"></i>
-                    </a>
+                        class="card-footer text-white bg-primary bg-opacity-75 text-decoration-none d-flex justify-content-between align-items-center mt-auto"><span>Lihat
+                            Detail</span><i class="bi bi-arrow-right-circle"></i></a>
                 </div>
             </div>
         </div>
-
         {{-- Card Pesanan Baru --}}
         <div class="col-md-6 col-xl-3">
             <div class="card dashboard-card text-bg-success h-100">
@@ -43,20 +39,16 @@
                                 <h5 class="card-title mb-1">PESANAN BARU (Pending)</h5>
                                 <h3 class="mb-0 fw-bold">{{ $newOrdersCount ?? 0 }}</h3>
                             </div>
-                            <div class="card-icon text-white-50">
-                                <i class="bi bi-cart-check-fill" style="font-size: 2.5rem;"></i>
-                            </div>
+                            <div class="card-icon text-white-50"><i class="bi bi-cart-check-fill"
+                                    style="font-size: 2.5rem;"></i></div>
                         </div>
                     </div>
                     <a href="{{ route('admin.orders.index', ['status' => 'pending']) }}"
-                        class="card-footer text-white bg-success bg-opacity-75 text-decoration-none d-flex justify-content-between align-items-center mt-auto">
-                        <span>Lihat Detail</span>
-                        <i class="bi bi-arrow-right-circle"></i>
-                    </a>
+                        class="card-footer text-white bg-success bg-opacity-75 text-decoration-none d-flex justify-content-between align-items-center mt-auto"><span>Lihat
+                            Detail</span><i class="bi bi-arrow-right-circle"></i></a>
                 </div>
             </div>
         </div>
-
         {{-- Card Pengguna Terdaftar --}}
         <div class="col-md-6 col-xl-3">
             <div class="card dashboard-card text-bg-info h-100">
@@ -67,20 +59,16 @@
                                 <h5 class="card-title mb-1">PENGGUNA TERDAFTAR</h5>
                                 <h3 class="mb-0 fw-bold">{{ $totalUsers ?? 0 }}</h3>
                             </div>
-                            <div class="card-icon text-white-50">
-                                <i class="bi bi-people-fill" style="font-size: 2.5rem;"></i>
-                            </div>
+                            <div class="card-icon text-white-50"><i class="bi bi-people-fill"
+                                    style="font-size: 2.5rem;"></i></div>
                         </div>
                     </div>
                     <a href="{{ route('admin.users.index') }}"
-                        class="card-footer text-white bg-info bg-opacity-75 text-decoration-none d-flex justify-content-between align-items-center mt-auto">
-                        <span>Lihat Detail</span>
-                        <i class="bi bi-arrow-right-circle"></i>
-                    </a>
+                        class="card-footer text-white bg-info bg-opacity-75 text-decoration-none d-flex justify-content-between align-items-center mt-auto"><span>Lihat
+                            Detail</span><i class="bi bi-arrow-right-circle"></i></a>
                 </div>
             </div>
         </div>
-
         {{-- Card Total Pendapatan --}}
         <div class="col-md-6 col-xl-3">
             <div class="card dashboard-card text-bg-warning h-100">
@@ -91,16 +79,13 @@
                                 <h5 class="card-title mb-1">TOTAL PENDAPATAN (Selesai)</h5>
                                 <h3 class="mb-0 fw-bold">Rp {{ number_format($totalRevenue ?? 0, 0, ',', '.') }}</h3>
                             </div>
-                            <div class="card-icon text-white-50">
-                                <i class="bi bi-cash-coin" style="font-size: 2.5rem;"></i>
+                            <div class="card-icon text-white-50"><i class="bi bi-cash-coin" style="font-size: 2.5rem;"></i>
                             </div>
                         </div>
                     </div>
                     <a href="{{ route('admin.orders.index', ['status' => 'delivered']) }}"
-                        class="card-footer text-white bg-warning bg-opacity-75 text-decoration-none d-flex justify-content-between align-items-center mt-auto">
-                        <span>Lihat Detail</span>
-                        <i class="bi bi-arrow-right-circle"></i>
-                    </a>
+                        class="card-footer text-white bg-warning bg-opacity-75 text-decoration-none d-flex justify-content-between align-items-center mt-auto"><span>Lihat
+                            Detail</span><i class="bi bi-arrow-right-circle"></i></a>
                 </div>
             </div>
         </div>
@@ -118,47 +103,40 @@
                         <ul class="list-group list-group-flush">
                             @foreach ($recentActivities as $activity)
                                 <li class="list-group-item d-flex justify-content-between align-items-start px-0 py-2">
-                                    <div class="w-100"> {{-- Tambah w-100 agar deskripsi bisa wrap --}}
+                                    <div class="w-100">
                                         @php
-                                            $icon = 'bi-bell-fill text-secondary'; // Default icon
-                                            $link = null; // Default no link
+                                            $icon = 'bi-bell-fill text-secondary';
+                                            $link = null;
                                             $subjectText = '';
-
                                             if (
                                                 $activity->subject_type &&
                                                 $activity->subject_id &&
                                                 $activity->subject
                                             ) {
-                                                $subjectModel = $activity->subject; // Model yang sudah di-eager load
+                                                $subjectModel = $activity->subject;
                                                 if ($activity->subject_type === \App\Models\Order::class) {
                                                     $icon = 'bi-receipt-cutoff text-success';
                                                     $link = route('admin.orders.show', $activity->subject_id);
-                                                    $subjectText = "Pesanan #{$subjectModel->order_number}";
                                                 } elseif (
                                                     $activity->subject_type === \App\Models\ContactMessage::class
                                                 ) {
                                                     $icon = 'bi-envelope-paper-fill text-info';
                                                     $link = route('admin.contacts.show', $activity->subject_id);
-                                                    $subjectText = "Pesan '{$subjectModel->subject}'";
                                                 } elseif ($activity->subject_type === \App\Models\User::class) {
                                                     $icon = 'bi-person-plus-fill text-primary';
-                                                    $link = route('admin.users.edit', $activity->subject_id); // Link ke edit user
-                                                    $subjectText = "Pengguna {$subjectModel->name}";
+                                                    $link = route('admin.users.edit', $activity->subject_id);
                                                 } elseif ($activity->subject_type === \App\Models\Product::class) {
-                                                    $icon = 'bi-cup-straw text-purple'; // Buat class CSS 'text-purple' jika perlu
+                                                    $icon = 'bi-cup-straw text-purple';
                                                     $link = route('admin.products.show', $activity->subject_id);
-                                                    $subjectText = "Produk {$subjectModel->name}";
                                                 }
                                             }
                                         @endphp
-
                                         <i class="bi {{ $icon }} me-2"></i>
                                         <span>{{ $activity->description }}</span>
                                         @if ($link)
                                             <a href="{{ $link }}"
                                                 class="fw-medium text-decoration-none small ms-1">(Lihat Detail)</a>
                                         @endif
-
                                         @if ($activity->causer)
                                             <small class="d-block text-muted fst-italic" style="font-size: 0.8em;">
                                                 oleh: {{ $activity->causer->name }}
@@ -169,7 +147,6 @@
                                     <small class="text-muted ms-2 text-nowrap flex-shrink-0"
                                         title="{{ $activity->created_at->format('d M Y H:i:s') }}">
                                         {{ $activity->created_at->diffForHumans(null, false, true, 1) }}
-                                        {{-- Format lebih singkat --}}
                                     </small>
                                 </li>
                             @endforeach
@@ -178,23 +155,17 @@
                         <p class="text-muted mt-3 text-center">Belum ada aktivitas terkini yang signifikan.</p>
                     @endif
                 </div>
-                @if (isset($recentActivities) &&
-                        $recentActivities->count() > 0 &&
-                        method_exists($recentActivities, 'hasPages') &&
-                        $recentActivities->hasPages())
-                    {{-- Cek jika $recentActivities adalah Paginator --}}
-                    <div class="card-footer bg-light">
-                        <div class="d-flex justify-content-center pt-2">
-                            {{ $recentActivities->links() }}
-                        </div>
-                    </div>
-                @elseif(isset($recentActivities) && $recentActivities->count() >= 5)
-                    {{-- Anggap 5 adalah batas per tampilan di dashboard --}}
+                {{-- AWAL PERBAIKAN: Komentari atau hapus link ke route admin.activities --}}
+                @if (isset($recentActivities) && $recentActivities->count() >= 5)
+                    {{-- Atau batas take() di controller --}}
                     <div class="card-footer text-center bg-light py-2">
-                        {{-- <a href="{{-- route('admin.activitylog.index') --}}" class="btn btn-sm btn-outline-secondary">Lihat Semua Aktivitas</a> --}}
-                        <small class="text-muted">Menampilkan 5 aktivitas terbaru.</small>
+                        {{-- PERBAIKI LINK INI --}}
+                        <a href="{{ route('admin.activities.index') }}" class="btn btn-sm btn-outline-secondary">Lihat
+                            Semua Aktivitas</a>
+                        {{-- <small class="text-muted d-block mt-1">Menampilkan beberapa aktivitas terbaru.</small> --}}
                     </div>
                 @endif
+                {{-- AKHIR PERBAIKAN --}}
             </div>
         </div>
         <div class="col-lg-5">
@@ -203,12 +174,10 @@
                     Tautan Cepat
                 </div>
                 <div class="list-group list-group-flush">
-                    <a href="{{ route('admin.products.create') }}" class="list-group-item list-group-item-action">
-                        <i class="bi bi-plus-circle-fill me-2 text-success"></i> Tambah Produk Baru
-                    </a>
-                    <a href="{{ route('admin.orders.index') }}" class="list-group-item list-group-item-action">
-                        <i class="bi bi-receipt-cutoff me-2 text-primary"></i> Lihat Semua Pesanan
-                    </a>
+                    <a href="{{ route('admin.products.create') }}" class="list-group-item list-group-item-action"> <i
+                            class="bi bi-plus-circle-fill me-2 text-success"></i> Tambah Produk Baru </a>
+                    <a href="{{ route('admin.orders.index') }}" class="list-group-item list-group-item-action"> <i
+                            class="bi bi-receipt-cutoff me-2 text-primary"></i> Lihat Semua Pesanan </a>
                     <a href="{{ route('admin.contacts.index', ['status' => 'Baru']) }}"
                         class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                         <span><i class="bi bi-chat-left-dots-fill me-2 text-info"></i> Pesan Kontak Baru</span>
@@ -216,9 +185,8 @@
                             <span class="badge bg-danger rounded-pill">{{ $newContactMessagesCount }}</span>
                         @endif
                     </a>
-                    <a href="{{ route('admin.users.index') }}" class="list-group-item list-group-item-action">
-                        <i class="bi bi-people-fill me-2 text-secondary"></i> Kelola Pengguna
-                    </a>
+                    <a href="{{ route('admin.users.index') }}" class="list-group-item list-group-item-action"> <i
+                            class="bi bi-people-fill me-2 text-secondary"></i> Kelola Pengguna </a>
                 </div>
             </div>
         </div>
@@ -226,6 +194,7 @@
 @endsection
 
 @push('styles')
+    {{-- ... (CSS Anda yang sudah ada) ... --}}
     <style>
         .dashboard-card .card-footer {
             font-size: 0.9rem;
@@ -238,7 +207,6 @@
         }
 
         .text-purple {
-            /* Contoh class warna kustom jika diperlukan */
             color: purple;
         }
     </style>
