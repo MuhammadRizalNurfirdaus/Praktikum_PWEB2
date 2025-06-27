@@ -199,4 +199,12 @@ class OrderController extends Controller
         log_activity("Admin menghapus pesanan #{$orderNumber}.", null, ['order_details' => $orderDetails], 'Pesanan');
         return redirect()->route('admin.orders.index')->with('success', 'Pesanan berhasil dihapus.');
     }
+    public function printInvoice(Order $order): \Illuminate\View\View
+    {
+        // Eager load relasi yang diperlukan untuk ditampilkan di struk
+        $order->load('items.product', 'user');
+
+        return view('admin.orders.invoice', compact('order'));
+        // Kita akan membuat view 'admin.orders.invoice' di langkah berikutnya
+    }
 }

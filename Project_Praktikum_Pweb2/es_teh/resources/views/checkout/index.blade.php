@@ -306,7 +306,7 @@
                             <div class="alert alert-info py-2 px-3">
                                 Transfer ke nomor DANA:<br>
                                 <strong class="fs-4">083101461069</strong><br>
-                                <small>(a.n. Nama Toko Anda)</small><br> {{-- SESUAIKAN --}}
+                                <small>(a.n. Es Teh Aji Manis)</small><br> {{-- SESUAIKAN --}}
                                 Total: <strong class="fs-5">Rp
                                     {{ number_format($totalPrice ?? 0, 0, ',', '.') }}</strong>
                                 <p class="small mt-1 mb-0">Konfirmasi setelah pembayaran.</p>

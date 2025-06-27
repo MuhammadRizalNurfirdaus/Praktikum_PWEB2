@@ -1,0 +1,10 @@
+FROM php:8.1-apache
+
+# Install ekstensi PHP yang dibutuhkan
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+# Aktifkan mod_rewrite (penting untuk Laravel dan CI4)
+RUN a2enmod rewrite
+
+# Atur working directory ke /var/www/html
+WORKDIR /var/www/html

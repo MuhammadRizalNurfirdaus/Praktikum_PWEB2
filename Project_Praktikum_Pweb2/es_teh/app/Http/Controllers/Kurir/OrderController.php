@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
 {
@@ -45,34 +46,48 @@ class OrderController extends Controller
         return view('kurir.orders.show', compact('order', 'kurirAllowedStatuses'));
     }
 
-    public function updateStatus(Request $request, Order $order) // 'Order' di sini adalah route model binding
+    /**
+     * Update status pesanan oleh Kurir.
+     */
+    public function updateStatus(Request $request, Order $order)
     {
         $kurirAllowedUpdateStatuses = ['shipped', 'delivered', 'failed'];
-        $oldStatus = $order->status;
 
-        $request->validate([
+        $validatedData = $request->validate([
             'status' => ['required', 'string', Rule::in($kurirAllowedUpdateStatuses)],
+            // Validasi bukti pengiriman: wajib jika statusnya 'delivered'
+            'proof_of_delivery' => 'required_if:status,delivered|nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        // Validasi tambahan: Pastikan kurir hanya update pesanan yang ditugaskan padanya
-        if ($order->kurir_id !== Auth::id()) {
-            return redirect()->back()->with('error', 'Anda tidak dapat mengubah status pesanan ini.');
-        }
+        // TODO: Tambahkan validasi otorisasi untuk memastikan kurir ini yang ditugaskan
+        // if ($order->kurir_id !== Auth::id()) {
+        //     return redirect()->back()->with('error', 'Anda tidak dapat mengubah status pesanan ini.');
+        // }
 
-        $order->status = $request->input('status');
+        $oldStatus = $order->status;
+        $order->status = $validatedData['status'];
+
         if ($order->status === 'delivered') {
-            $order->payment_status = 'paid';
+            $order->payment_status = 'paid'; // Asumsi 'delivered' juga berarti 'paid' (untuk COD)
+
+            if ($request->hasFile('proof_of_delivery')) {
+                // Hapus bukti lama jika ada (untuk kasus update ulang)
+                if ($order->proof_of_delivery && Storage::disk('public')->exists($order->proof_of_delivery)) {
+                    Storage::disk('public')->delete($order->proof_of_delivery);
+                }
+                // Simpan file baru ke storage/app/public/proofs
+                $path = $request->file('proof_of_delivery')->store('proofs', 'public');
+                $order->proof_of_delivery = $path; // Simpan path ke database
+            }
         }
         $order->save();
 
-        if ($oldStatus !== $order->status) {
-            log_activity(
-                "Kurir memperbarui status pesanan #{$order->order_number} dari '{$oldStatus}' menjadi '{$order->status}'.",
-                $order,
-                ['old_status' => $oldStatus, 'new_status' => $order->status, 'updated_by_role' => 'kurir', 'kurir_id' => Auth::id()],
-                'Pesanan'
-            );
-        }
+        log_activity(
+            "Kurir memperbarui status pesanan #{$order->order_number} dari '{$oldStatus}' menjadi '{$order->status}'.",
+            $order,
+            ['old_status' => $oldStatus, 'new_status' => $order->status],
+            'Pesanan'
+        );
 
         return redirect()->route('kurir.orders.show', $order->id)->with('success', 'Status pesanan berhasil diperbarui.');
     }

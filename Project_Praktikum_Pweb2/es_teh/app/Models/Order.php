@@ -13,8 +13,8 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',          // User yang membuat pesanan (pelanggan)
-        'kurir_id',         // <--- TAMBAHKAN INI KE $fillable jika akan diisi via mass assignment
+        'user_id',
+        'kurir_id',
         'order_number',
         'total_amount',
         'status',
@@ -25,6 +25,18 @@ class Order extends Model
         'payment_method',
         'payment_status',
         'notes',
+        'proof_of_delivery',
+        'product_rating', // Nama kolom yang benar
+        'kurir_rating',   // Kolom baru
+        'feedback',
+        'feedback_submitted_at',
+        'archived_by_user'
+
+    ];
+
+    protected $casts = [
+        'feedback_submitted_at' => 'datetime',
+        'archived_by_user' => 'boolean'
     ];
 
     /**

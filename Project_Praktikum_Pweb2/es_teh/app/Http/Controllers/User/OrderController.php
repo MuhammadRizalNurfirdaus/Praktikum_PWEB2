@@ -12,16 +12,16 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() // Anda bisa menambahkan Request $request jika ada filter
+    public function index()
     {
         $user = Auth::user();
+        // Hanya tampilkan pesanan yang tidak diarsipkan oleh user
         $orders = Order::where('user_id', $user->id)
+            ->where('archived_by_user', false) // <--- KONDISI BARU
             ->orderBy('created_at', 'desc')
-            ->paginate(10); // Misalnya, 10 pesanan per halaman
-
-        return view('user.orders.index', compact('orders')); // PASTIKAN NAMA VIEW INI BENAR
+            ->paginate(10);
+        return view('user.orders.index', compact('orders'));
     }
-
     // ... method show dan confirmReception tetap sama ...
     public function show(Order $order)
     {
@@ -54,5 +54,42 @@ class OrderController extends Controller
             return redirect()->route('user.orders.show', $order->id)->with('success', 'Pesanan telah dikonfirmasi diterima.');
         }
         return redirect()->route('user.orders.show', $order->id)->with('error', 'Pesanan tidak dapat dikonfirmasi saat ini atau status tidak sesuai.');
+    }
+    /**
+     * Simpan feedback dari user untuk sebuah pesanan (produk dan kurir).
+     */
+    public function storeFeedback(Request $request, Order $order)
+    {
+        if ($order->user_id !== Auth::id() || $order->status !== 'delivered') {
+            abort(403, 'Akses ditolak atau pesanan belum selesai.');
+        }
+
+        $validatedData = $request->validate([
+            'product_rating' => 'required|integer|min:1|max:5', // Nama input harus 'product_rating'
+            'kurir_rating' => 'required|integer|min:1|max:5', // Nama input harus 'kurir_rating'
+            'feedback' => 'nullable|string|max:1000',
+        ]);
+
+        $order->product_rating = $validatedData['product_rating'];
+        $order->kurir_rating = $validatedData['kurir_rating'];
+        $order->feedback = $validatedData['feedback'];
+        $order->feedback_submitted_at = now();
+        $order->save();
+
+        return redirect()->route('user.orders.show', $order->id)->with('success', 'Terima kasih atas ulasan Anda!');
+    }
+
+    /**
+     * "Hapus" atau arsipkan pesanan dari riwayat user.
+     */
+    public function archive(Order $order)
+    {
+        if ($order->user_id !== Auth::id()) {
+            abort(403, 'Akses ditolak.');
+        }
+        $order->archived_by_user = true;
+        $order->save();
+
+        return redirect()->route('user.orders.index')->with('success', "Riwayat pesanan #{$order->order_number} telah dihapus.");
     }
 }
