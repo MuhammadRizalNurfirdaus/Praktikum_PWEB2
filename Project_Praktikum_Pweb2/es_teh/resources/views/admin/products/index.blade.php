@@ -36,18 +36,20 @@
 
     @if ($products->count() > 0)
         <div class="card shadow-sm">
-            <div class="card-header">
-                Daftar Produk (Total: {{ $products->total() }})
+            <div class="card-header bg-light-subtle">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-medium">Daftar Produk (Total: {{ $products->total() }})</span>
+                </div>
             </div>
             <div class="table-responsive">
-                <table class="table table-striped table-sm table-hover mb-0 align-middle"> {{-- tambahkan align-middle --}}
+                <table class="table table-striped table-sm table-hover mb-0 align-middle">
                     <thead class="table-dark">
                         <tr>
                             <th scope="col" style="width: 5%;">#</th>
                             <th scope="col" style="width: 10%;">Gambar</th>
                             <th scope="col" style="width: 30%;">Nama Produk</th>
                             <th scope="col" style="width: 15%;">Ukuran</th>
-                            <th scope="col" style="width: 15%;">Harga</th>
+                            <th scope="col" class="text-end" style="width: 15%;">Harga</th>
                             <th scope="col" style="width: 15%;" class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -56,6 +58,7 @@
                             <tr>
                                 <td>{{ $products->firstItem() + $key }}</td>
                                 <td>
+                                    {{-- Logika Pengecekan Gambar --}}
                                     @if ($product->image_path && Storage::disk('public')->exists($product->image_path))
                                         <img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->name }}"
                                             class="img-thumbnail product-img-thumb"
@@ -66,24 +69,20 @@
                                 </td>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->size }}</td>
-                                <td>Rp {{ number_format($product->price, 0, ',', '.') }}</td>
+                                <td class="text-end">Rp {{ number_format($product->price, 0, ',', '.') }}</td>
                                 <td class="text-center table-actions">
                                     <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-info btn-sm"
-                                        title="Lihat Detail Produk">
-                                        <i class="bi bi-eye-fill"></i>
-                                    </a>
+                                        title="Lihat Detail Produk"><i class="bi bi-eye-fill"></i></a>
                                     <a href="{{ route('admin.products.edit', $product->id) }}"
-                                        class="btn btn-warning btn-sm" title="Edit Produk">
-                                        <i class="bi bi-pencil-fill"></i>
-                                    </a>
+                                        class="btn btn-warning btn-sm" title="Edit Produk"><i
+                                            class="bi bi-pencil-fill"></i></a>
                                     <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
-                                        class="d-inline">
+                                        class="d-inline"
+                                        onsubmit="return confirm('PERINGATAN!\nAnda akan menghapus produk {{ $product->name }} ({{ $product->size }}) ini?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" title="Hapus Produk"
-                                            onclick="return confirm('PERINGATAN!\nApakah Anda yakin ingin menghapus produk {{ $product->name }} ({{ $product->size }}) ini?\nTindakan ini tidak dapat diurungkan.')">
-                                            <i class="bi bi-trash3-fill"></i>
-                                        </button>
+                                        <button type="submit" class="btn btn-danger btn-sm" title="Hapus Produk"><i
+                                                class="bi bi-trash3-fill"></i></button>
                                     </form>
                                 </td>
                             </tr>

@@ -8,15 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('orders', function (Blueprint $table) {
-            // Kolom untuk menyimpan path file gambar bukti pengiriman
-            $table->string('proof_of_delivery')->nullable()->after('feedback_submitted_at');
-        });
+        if (!Schema::hasColumn('orders', 'proof_of_delivery')) {
+            Schema::table('orders', function (Blueprint $table) {
+                $table->string('proof_of_delivery')->nullable()->after('notes'); // 'notes' pasti ada
+            });
+        }
     }
+
     public function down(): void
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->dropColumn('proof_of_delivery');
-        });
+        if (Schema::hasColumn('orders', 'proof_of_delivery')) {
+            Schema::table('orders', function (Blueprint $table) {
+                $table->dropColumn('proof_of_delivery');
+            });
+        }
     }
 };
